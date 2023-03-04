@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm ĐH khối D</title>
+</head>
+
+<body>
+    <form action="#">
+        <h1>KIỂM TRA ĐIỂM ĐẠI HỌC KHỐI D</h1>
+        Môn toán: <input id="Math" type="text"><br>
+        Môn văn: <input id="Lit" type="text"><br>
+        Môn Anh: <input id="Eng" type="text"><br>
+        <form>
+            <input type="radio" id="KV1" name="KV" value="KV1">
+            <label for="KV1">KV1</label><br>
+
+            <input type="radio" id="KV2" name="KV" value="KV2">
+            <label for="KV2">KV2</label><br>
+
+            <input type="radio" id="KV2NT" name="KV" value="KV2NT">
+            <label for="KV2NT">KV2NT</label><br>
+
+            <input type="radio" id="KV3" name="KV" value="KV3">
+            <label for="KV3">KV3</label><br>
+
+            <input type="button" onclick="Check()" Value="Kiểm tra" />
+        </form>
+
+        <p id="mark">Điểm : <br>
+
+        </p>
+    </form>
+    <script>
+
+        function Check() {
+            Math = document.getElementById("Math").value;
+            Lit = document.getElementById("Lit").value;
+            Eng = document.getElementById("Eng").value;
+            KV = document.getElementsByName("KV").value;
+            total = 0;
+
+
+            switch (KV) {
+                case "KV1":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng) + 0.75;
+                    break;
+
+                case "KV2":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng) + 0.5;
+                    break;
+
+                case "KV2NT":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng) + 0.25;
+                    break;
+
+                case "KV3":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng);
+                    break;
+
+
+
+            }
+            total = document.getElementById("mark").innerHTML;
+            
+
+        }
+    </script>
+
+</body>
+
+</html>
+
+KV1: cộng 0.75 điểm
+KV2-NT: cộng 0.5 điểm
+KV2: cộng 0.25 điểm
+KV3: không cộng điểm

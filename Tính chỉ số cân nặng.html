@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số BMI</title>
+</head>
+<body>
+    <h1>TÍNH CHỈ SỐ BMI</h1>
+        Nhập chiều cao(cm): <input id="high" type="text"><br>
+        Nhập cân nặng: <input id="weight" type="text"><br>
+        <input type="button" onClick="BMI()" Value="Kiểm tra" />
+        <p>Result : <br>
+            <span id="result"></span>
+        </p>
+        <script>
+            function BMI() {
+                high = document.getElementById("high").value;
+                weight = document.getElementById("weight").value;
+                bmi = parseInt(weight)/(Math.pow(parseInt(high)),2);
+                switch (bmi) {
+                case (bmi < 16);
+                document.getElementById("result").innerHTML = 'Gầy độ III';
+                    break;
+
+                    case (bmi >= 16 && bmi < 17):
+                document.getElementById("result").innerHTML = 'Gầy độ II';
+                    break;
+
+                    case (bmi >= 17 && bmi < 18):
+                document.getElementById("result").innerHTML = 'Gầy độ I';
+                    break;
+
+                    case (bmi >= 18.5 && bmi < 25):
+                document.getElementById("result").innerHTML = 'Bình thường';
+                    break;
+
+                    case (bmi >= 25 && bmi < 30):
+                document.getElementById("result").innerHTML = 'Thừa cân';
+                    break;
+
+                    case (bmi >= 30 && bmi < 35):
+                document.getElementById("result").innerHTML = 'Béo phì độ I';
+                    break;
+
+                    case (bmi >= 35 && bmi < 40):
+                document.getElementById("result").innerHTML = 'Béo phì độ II';
+                    break;
+
+                    case (bmi >= 40):
+                document.getElementById("result").innerHTML = 'Béo phì độ III';
+                    break;
+
+                
+            }
+        }
+        </script>
+</body>
+</html>
+
+BMI <16: Gầy độ III
+16 ≤ BMI < 17: Gầy độ II
+17 ≤ BMI < 18.5: Gầy độ I
+18.5 ≤ BMI < 25: Bình thường
+25 ≤ BMI < 30: Thừa cân
+30 ≤ BMI < 35: Béo phì độ 1
+35 ≤ BMI < 40: Béo phì độ II
+BMI > 40: Béo phì độ III
