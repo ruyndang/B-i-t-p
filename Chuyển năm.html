@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chuyển đổi năm</title>
+  
+</head>
+<body>
+	<h1>CHUYỂN NĂM DƯƠNG LỊCH SANG NĂM ÂM LỊCH</h1>
+	   Nhập năm dương lịch: <input type="text" class="form-control" >
+	      <button class="btn btn-primary">Chuyển</button>
+	    
+	  
+	  <p id="result1"></p>
+	  <p id="result2"></p>
+	</div>
+	<script> 
+    
+const ipnElement     = document.querySelector('input')
+const btnElement     = document.querySelector('button')
+const resultElement1 = document.querySelector('#result1')
+const resultElement2 = document.querySelector('#result2')
+const danh_sach_can = ['Canh', 'Tân', 'Nhâm', 'Quý', 'Giáp', 'Ất', 'Bính', 'Đinh', 'Mậu', 'Kỷ']
+const danh_sach_chi = ['Thân', 'Dậu', 'Tuất', 'Hợi', 'Tí', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tỵ', 'Ngọ', 'Mùi']
+
+
+function convertYear(solarYear) {
+  if (solarYear < 0) return 'Năm Dương Lịch phải lớn hơn 0'
+  if (Number.isNaN(solarYear)) return 'Năm Dương Lịch không đúng định dạng, vui lòng nhập lại'
+
+  let can = 'Không'
+  if ((solarYear % 10) >= 0 && (solarYear % 10) <= 9) {
+    can = danh_sach_can[solarYear % 10]
+  }
+
+  let chi = 'Biết'
+  if ((solarYear % 12) >= 0 && (solarYear % 12) <= 11) {
+    chi = danh_sach_chi[solarYear % 12]
+  }
+  return `${can} ${chi}`
+}
+
+btnElement.addEventListener('click', function() {
+
+  const solarYear = Number(ipnElement.value)
+
+
+  resultElement1.innerHTML = `Năm dương lịch: <b>${solarYear}</b>`
+  resultElement2.innerHTML = `Năm âm lịch: <b>${convertYear(solarYear)}</b>`
+})
+
+
+    </script>
+</body>
+</html>
