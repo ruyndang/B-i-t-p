@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game đoán số</title>
+    <button id="btn-action">Chơi</button>
+</head>
+
+<body>
+    <script>
+        let a = prompt("Nhập vào một số mà bạn muốn ngẫu nhiên trong khoảng đó");
+        let b = prompt("Nhập vào số bạn đoán");
+        let c = Math.floor(Math.random() * parseInt(a));
+        let btnaction = document.getElementById("btn-action");
+        btnaction.addEventListener("click", () => {
+
+        if (b == c) {
+            document.write("bạn đã đoán đúng");
+
+        }
+        else
+            document.write("Bạn đã đoán sai");
+
+    });
+    </script>
+</body>
+
+</html>

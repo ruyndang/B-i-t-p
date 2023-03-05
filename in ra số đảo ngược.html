@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số đảo ngược</title>
+    <input type="text" id="num">
+    <button id="btn-action" type="button">Chuyển</button>
+
+</head>
+
+<body>
+    <script>
+        let btnAction = document.getElementById("btn-action")
+        btnAction.addEventListener("click", () => {
+            let n = parseInt(document.getElementById("num").value);
+            let reverse = 0;
+            let remainder = 0;
+
+            
+
+while (n>0) {
+    remainder = n%10;
+    reverse = reverse * 10 + remainder;
+    n = Math.floor(n / 10);
+}
+
+document.write(reverse);
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
