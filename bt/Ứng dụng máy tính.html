@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng máy tính</title>
+</head>
+
+<body>
+    <form action="#">
+        <h1>Calculator</h1>
+        Number1: <input id="number1" type="tex">
+        Number2: <input id="number2" type="text"><br>
+        <input type="button" onClick="Add()" Value="Add(+)" />
+        <input type="button" onClick="Sub()" Value="Sub(-)" />
+        <input type="button" onClick="Multi()" Value="Multi(*)" />
+        <input type="button" onClick="Div()" Value="Div(/)" />
+        <p>Result : <br>
+            <span id="result"></span>
+        </p>
+
+
+    </form>
+    <script>
+
+        function Add() {
+            num1 = document.getElementById("number1").value;
+            num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = parseInt(num1) + parseInt(num2);
+
+        }
+
+        function Sub() {
+            num1 = document.getElementById("number1").value;
+            num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = parseInt(num1) - parseInt(num2);
+
+        }
+        function Multi() {
+            num1 = document.getElementById("number1").value;
+            num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = parseInt(num1) * parseInt(num2);
+
+        }
+
+        function Div() {
+            num1 = document.getElementById("number1").value;
+            num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = parseInt(num1) / parseInt(num2);
+
+        }
+
+    </script>
+</body>
+
+</html>

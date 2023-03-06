@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy đổi tiền tệ</title>
+</head>
+<body>
+    <h1>QUY ĐỔI TIỀN TỆ</h1>
+<form action=#>
+    NHẬP SỐ TIỀN <input id="number" type="text"><br>
+  <label>From currency:</label>
+  <select name="currency1" id="currency1">
+    <option value="VNĐ">VNĐ</option>
+  </select><br>
+  <label>to currency:</label>
+  <select name="currency2" id="currency2">
+    <option value="USD">USD</option>
+  </select>
+  <br><br>
+  
+        <input type="button" onClick="convert()" Value="Convert" />
+        
+        <p>Result : <br>
+            <span id="result"></span>
+        </p>
+        <script>
+            function convert() {
+                number = document.getElementById("number").value;
+                document.getElementById("result").innerHTML = number * 0.00004
+                
+            }
+        </script>
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm ĐH khối D</title>
+</head>
+
+<body>
+    <form action="#">
+        <h1>KIỂM TRA ĐIỂM ĐẠI HỌC KHỐI D</h1>
+        Môn toán: <input id="Math" type="text"><br>
+        Môn văn: <input id="Lit" type="text"><br>
+        Môn Anh: <input id="Eng" type="text"><br>
+        <form>
+            <label>Khu vực:</label>
+            <select name="Khu vực" id="KV">
+                <option value="KV1">KV1</option>
+                <option value="KV2">KV2</option>
+                <option value="KV2NT">KV2NT</option>
+                <option value="KV3">KV3</option>
+
+            </select><br>
+
+            <input type="button" onclick="Check()" Value="Kiểm tra" />
+        </form>
+
+        <p id="mark">Điểm : <br>
+
+        </p>
+    </form>
+    <script>
+        
+
+        function Check() {
+            Math = document.getElementById("Math").value;
+            Lit = document.getElementById("Lit").value;
+            Eng = document.getElementById("Eng").value;
+            e = document.getElementById("KV").value;
+
+            giaTri = e.options[e.selectedIndex].text;
+            
+            total = 0;
+
+
+            switch (giaTri) {
+                case "KV1":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng) + 0.75;
+                    break;
+
+                case "KV2":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng) + 0.5;
+                    break;
+
+                case "KV2NT":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng) + 0.25;
+                    break;
+
+                case "KV3":
+                    total = parseInt(Math) + parseInt(Lit) + ParseInt(Eng);
+                    break;
+
+
+
+            }
+            total = document.getElementById("mark").innerHTML;
+
+
+        }
+    </script>
+
+</body>
+
+</html>
+
+KV1: cộng 0.75 điểm
+KV2-NT: cộng 0.5 điểm
+KV2: cộng 0.25 điểm
+KV3: không cộng điểm
