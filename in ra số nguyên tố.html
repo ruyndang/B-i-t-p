@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In ra số nguyên tố</title>
+</head>
+
+<body>
+    <script>
+        let numbers = parseInt(prompt("Nhập vào số số nguyên tố cần in ra"));
+        let count = 0;
+        let n = 2;
+        let i = 2;
+        let dem = 2;
+        while(count <= numbers){
+            while (i < n) {
+            if (n % i == 0) {
+                dem += 1;
+
+                break;
+            }
+            i++;
+        
+        if (dem == 0) {
+            document.write(`${n}, `);
+        } else;
+    }
+        
+        numbers +=1;
+        count +=1;
+        break;
+        };
+
+        
+        
+
+    </script>
+</body>
+
+</html>
